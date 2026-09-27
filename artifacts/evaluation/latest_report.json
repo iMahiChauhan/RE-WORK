@@ -1,0 +1,603 @@
+{
+  "benchmark_version": "final",
+  "executed_count": 22,
+  "passed": 22,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "negative_scenarios": 7,
+  "metrics": {
+    "scenario_pass_rate": 1.0,
+    "classification_agreement": 1.0,
+    "governance_violations": 0
+  },
+  "results": [
+    {
+      "id": "B01",
+      "title": "Strong match",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "POTENTIALLY_VIABLE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "STRONG_MATCH",
+          "MATCH_WITH_GAPS",
+          "POTENTIALLY_VIABLE"
+        ],
+        "min_genuine_gaps": 0,
+        "negative_outcome": false
+      },
+      "governance_violations": [],
+      "confidence": 0.88,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B02",
+      "title": "True capability gap",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "governance_violations": [],
+      "confidence": 0.51,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B03",
+      "title": "Career returner",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "POTENTIALLY_VIABLE",
+        "genuine_gaps": [
+          "power_bi"
+        ],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "required_genuine_gaps": [
+          "power_bi"
+        ],
+        "expect_proxy": true,
+        "negative_outcome": false
+      },
+      "governance_violations": [],
+      "confidence": 0.81,
+      "false_positive_risk": "low"
+    },
+    {
+      "id": "B04",
+      "title": "Credential proxy candidate",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "POTENTIALLY_VIABLE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "expect_proxy": true,
+        "min_genuine_gaps": 0,
+        "negative_outcome": false
+      },
+      "governance_violations": [],
+      "confidence": 0.64,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B05",
+      "title": "Experience proxy candidate",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "POTENTIALLY_VIABLE",
+        "genuine_gaps": [
+          "power_bi"
+        ],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "expect_proxy": true
+      },
+      "governance_violations": [],
+      "confidence": 0.63,
+      "false_positive_risk": "low"
+    },
+    {
+      "id": "B06",
+      "title": "Workplace constraint",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "profile": {
+          "id": "bench-b06",
+          "display_name": "Bench Candidate b06",
+          "location": "Lucknow",
+          "work_modes": [
+            "remote"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        },
+        "expect_workplace_constraint": true
+      },
+      "governance_violations": [],
+      "confidence": 0.52,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B07",
+      "title": "Insufficient evidence",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "REQUIRES_HUMAN_REVIEW",
+        "genuine_gaps": [
+          "sql"
+        ],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "REQUIRES_HUMAN_REVIEW",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "governance_violations": [],
+      "confidence": 0.35,
+      "false_positive_risk": "low"
+    },
+    {
+      "id": "B08",
+      "title": "Transferable capability",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "POTENTIALLY_VIABLE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {},
+      "governance_violations": [],
+      "confidence": 0.64,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B09",
+      "title": "Adjacent capability",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "governance_violations": [],
+      "confidence": 0.51,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B10",
+      "title": "Stale evidence",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "REQUIRES_HUMAN_REVIEW",
+        "genuine_gaps": [
+          "power_bi"
+        ],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "expect_stale": true
+      },
+      "governance_violations": [],
+      "confidence": 0.48,
+      "false_positive_risk": "low"
+    },
+    {
+      "id": "B11",
+      "title": "Employer not ready",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "employer_not_ready": true,
+        "note": "Employer readiness evaluated at opportunity stage"
+      },
+      "governance_violations": [],
+      "confidence": 0.4,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B12",
+      "title": "Two-sided gap",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "REQUIRES_HUMAN_REVIEW",
+        "genuine_gaps": [
+          "power_bi"
+        ],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "required_genuine_gaps": [
+          "power_bi"
+        ],
+        "two_sided": true
+      },
+      "governance_violations": [],
+      "confidence": 0.48,
+      "false_positive_risk": "low"
+    },
+    {
+      "id": "B13",
+      "title": "Multiple viable opportunities",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "POTENTIALLY_VIABLE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "min_genuine_gaps": 0
+      },
+      "governance_violations": [],
+      "confidence": 0.76,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B14",
+      "title": "No viable opportunities",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "NOT_CURRENTLY_READY",
+          "INSUFFICIENT_EVIDENCE",
+          "REQUIRES_HUMAN_REVIEW"
+        ],
+        "negative_outcome": true
+      },
+      "governance_violations": [],
+      "confidence": 0.39,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B15",
+      "title": "Conflicting candidate evidence",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {},
+      "governance_violations": [],
+      "confidence": 0.4,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B16",
+      "title": "Conflicting job requirements",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "note": "Job conflict in requirements"
+      },
+      "governance_violations": [],
+      "confidence": 0.4,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B17",
+      "title": "Necessary credential",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "REQUIRES_HUMAN_REVIEW",
+        "genuine_gaps": [
+          "sql"
+        ],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "NOT_CURRENTLY_READY",
+          "REQUIRES_HUMAN_REVIEW",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "governance_violations": [],
+      "confidence": 0.38,
+      "false_positive_risk": "low"
+    },
+    {
+      "id": "B18",
+      "title": "Accessibility compatible role",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "profile": {
+          "id": "bench-b18",
+          "display_name": "Bench Candidate b18",
+          "location": "Bangalore",
+          "work_modes": [
+            "remote",
+            "hybrid"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        }
+      },
+      "governance_violations": [],
+      "confidence": 0.4,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B19",
+      "title": "Accessibility incompatible role",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "profile": {
+          "id": "bench-b19",
+          "display_name": "Bench Candidate b19",
+          "location": "Bangalore",
+          "work_modes": [
+            "remote"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        },
+        "expect_workplace_constraint": true
+      },
+      "governance_violations": [],
+      "confidence": 0.4,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B20",
+      "title": "Displaced worker",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "REQUIRES_HUMAN_REVIEW"
+        ],
+        "negative_outcome": true
+      },
+      "governance_violations": [],
+      "confidence": 0.39,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B21",
+      "title": "Tier-2/3 candidate",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "expect_proxy": true,
+        "profile": {
+          "id": "bench-b21",
+          "display_name": "Bench Candidate b21",
+          "location": "Lucknow",
+          "work_modes": [
+            "hybrid",
+            "remote"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        }
+      },
+      "governance_violations": [],
+      "confidence": 0.52,
+      "false_positive_risk": "review"
+    },
+    {
+      "id": "B22",
+      "title": "Reskilling candidate",
+      "status": "EXECUTED",
+      "pass": true,
+      "actual": {
+        "diagnosis_state": "INSUFFICIENT_EVIDENCE",
+        "genuine_gaps": [],
+        "proxy_flags": [
+          "ELIGIBILITY_PROXY",
+          "WORKPLACE_CONSTRAINT"
+        ],
+        "eligibility_proxy_count": 1
+      },
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "governance_violations": [],
+      "confidence": 0.51,
+      "false_positive_risk": "review"
+    }
+  ],
+  "finale_case": {
+    "case_id": "case-ananya-finale",
+    "lifecycle": "EXPLANATION_READY",
+    "integrity_errors": [],
+    "pass": true
+  }
+}
